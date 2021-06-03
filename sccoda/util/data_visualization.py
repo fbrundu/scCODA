@@ -275,6 +275,11 @@ def boxplots(
             else:
                 hue = None
 
+            # NOTE: you might need to implement a check or warning
+            # if hue_order is already set in args_swarmplot
+            if "hue_order" in args_boxplot:
+                args_swarmplot["hue_order"] = args_boxplot["hue_order"]
+                
             if hue is None:
                 g.map(
                     sns.swarmplot,
